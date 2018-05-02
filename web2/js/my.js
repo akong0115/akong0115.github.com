@@ -38,7 +38,11 @@ $(window).scroll(function(){
     gdjz('#title','animated bounceInLeft',200);
     gdjz('.dercription>ul li','animated fadeInUp',250);
     gdjz('#word2 h2','animated bounceInRight',700);
-    gdjz('#leftPhone','animated bounceInRight',2500);
-    gdjz('#rightPhone','animated bounceInLeft',2500);
-    gdjz('#centerPhone','animated fadeInDown',2500);
+    gdjz('#word2 li','animated fadeInUp',780);
+    gdjz('#za li','animated fadeInUp',1500);
+    gdjz('#za h2','animated bounceInRight',1500);
+
+    gdjz('#one','animated fadeInDown',2500);
+    gdjz('#two','animated fadeInDown',2500);
+    gdjz('#three','animated fadeInDown',2500);
 })

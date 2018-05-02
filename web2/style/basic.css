@@ -5,6 +5,22 @@
     padding:0;
     margin:0;
 }
+#fix{
+    position: fixed;
+    top: 0;
+    width: 1280px;
+    background-color: #fff;
+    height: 50px;
+    opacity: 0.5;
+    display: flex;
+    align-items: center;
+}
+#fix a{
+    position: absolute;
+    right: 0;
+    color: #999;
+    text-decoration: none;
+}
 header{
     background: url(../images/page1_back.jpg) no-repeat;
     height: 742px;
@@ -26,7 +42,7 @@ header img{
 #name{
     font-size: 50px;
     margin-top: 60px;
-    font-family:'SFJ_Ximingtbc2157968199c2';
+    font-family:'cyzximingtfc4bfdd144199c2';
     color: #fff;
     display: none;
 }
@@ -56,7 +72,7 @@ header img{
     position: relative;
 }
 .dercription h2{
-    margin-bottom: 25px;
+    margin-bottom:40px;
     color: #333;
 }
 .dercription li{
@@ -142,7 +158,7 @@ header img{
     margin-top: 200px;
     position: relative;
 }
-#section3 img{
+#xie1,#xie2,#xie3,#xie4,#xie5{
     -webkit-transform: skew(-35deg,25deg);
     max-height: 340px;
     box-shadow: -5px 4px 5px rgba(0,0,0,.2);
@@ -188,30 +204,109 @@ header img{
     top: 400px;
     opacity: 0.6;
 }
+#za{
+    list-style-type: none;
+    position: absolute;
+    right: 250px;
+    top: 150px;
+}
+#za h2{
+    margin-bottom: 20px;
+    color: #333;
+}
+
+#za li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #888;
+}
+#za li img{
+    margin-right: 10px;
+}
 /*第四幕*/
+#title{
+    position: absolute;
+    top: 0;
+    color: #333;
+}
+#one,#two,#three{
+    color: #888;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+#four img{
+    margin-right: 10px;
+}
+#one{
+    position: absolute;
+    top: 250px;
+    left: 180px;
+}
+#two{
+    position: absolute;
+    top: 350px;
+    left: 180px;
+}
+#three{
+    position: absolute;
+    left: 180px;
+    top: 450px;
+}
 #four{
     display: flex;
     justify-content: center;
     align-items: center;
     height: 700px;
+    position: relative;
+}
+#phoneBox3{
+    position: absolute;
+    top: 600px;
+    right: 20px;
 }
 #centerPhone{
     position: relative;
+    top: 200px;
     z-index: 1;
+    box-shadow: 5px 4px 5px rgba(0,0,0,.2);
 }
 #leftPhone{
     position: relative;
     left: 100px;
+    box-shadow: 5px 4px 5px rgba(0,0,0,.2);
 }
 #rightPhone{
     position: relative;
     right: 100px;
     z-index: 0;
+    box-shadow: 5px 4px 5px rgba(0,0,0,.2);
 }
 /*尾部*/
 footer{
-    background: url(../images/case3d_ruka.jpg) no-repeat;
+    background: url(../images/foot.jpg) no-repeat;
     background-size: 100%;
     height: 742px;
     max-height: 742px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+footer div{
+    border: 2px solid #fff;
+    padding:25px 50px;
+    margin-top: 0px;
+}
+footer a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 24px;
+}
+footer img{
+    max-height: 150px;
+    position: absolute;
+    top: 4000px;
+    margin-top: 100px;
 }
