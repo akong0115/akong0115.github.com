@@ -14,11 +14,11 @@
         <div class="head-box">
             <img src="./images/logo.jpg">
             <div class="dropdown">
-                <div>
+                <div id="drop-down-select">
                     <span>杭州</span>
                     <span class="iconfont icon-arrow-down"></span>
                 </div>
-                <ul class="drop-select">
+                <ul class="drop-select" id="city-select">
                     <li class="active-selected">杭州</li>
                     <li>上海</li>
                     <li>南京</li>
@@ -43,8 +43,8 @@
         </div>
         <div class="search">
             <form>
-                <input type="text" placeholder="输入区域、小区名">
-                <ul class="drop-select">
+                <input type="text" placeholder="输入区域、小区名" id="area-input">
+                <ul class="drop-select" id="area-select">
                         <li class="active-selected">热门搜索</li>
                         <li>萧山北干</li>
                         <li>下沙</li>
@@ -280,8 +280,19 @@
             <div class="ques-btn red-btn">
                 <div class="iconfont icon-message"></div>立即咨询</div>
             <div class="quick-btn">
-                <a class="iconfont icon-user"></a>
-                <a class="iconfont icon-phone"></a>
+                <a class="iconfont icon-user">
+                    <div class="sidebar-show">
+                        <p>业主委托</p>
+                        <i class="triangle"></i>
+                    </div>
+                </a>
+                <a class="iconfont icon-phone">
+                    <div class="sidebar-show">
+                            <img src="./images/wecat.svg">
+                            <p>爱上租APP</p>
+                        <i class="triangle"></i>
+                    </div>
+                </a>
                 <a class="iconfont icon-arrow-up"></a>
             </div>
         </aside>
@@ -371,6 +382,7 @@
             <address>© Hangzhou ishangzu Technology Co.,Ltd. All rights reserved.备案号：浙ICP备15007224号-2浙公网安备 33010802006107号</address>
         </div>
     </footer>
+    <script src="./js/index.js"></script>
 </body>
 
 </html>
