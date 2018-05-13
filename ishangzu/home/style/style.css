@@ -294,12 +294,70 @@ header nav a:focus {
 /* 轮播图 */
 
 .carousel {
-    /* white-space:nowrap; */
+    max-width: 100%;
     width: 100%;
     height: 460px;
-    background: url(../images/5df8197b-9828-4ee2-b3f8-f0bae1cd19f4.jpg@!1920w_126h_jpg_web) no-repeat center center;
+    position: relative;
 }
-
+.carousel-img li{
+    float: left;
+    width: 100%;
+    height: 460px;
+}
+.carousel-img li:nth-of-type(1){
+    background: url('../images/5df8197b-9828-4ee2-b3f8-f0bae1cd19f4.jpg@!1920w_126h_jpg_web') no-repeat center center;
+}
+.carousel-img li:nth-of-type(2){
+    background: url('../images/a1f89121-aa0e-4c84-80e1-013ce9899eec.jpg@!1920w_126h_jpg_web') no-repeat center center;
+}
+.carousel-img li:nth-of-type(3){
+    background: url('../images/cd77b2a2-8fb6-49be-bd74-9b4a1143bd54.png@!1920w_126h_jpg_web')no-repeat center center;
+}
+.carousel-img li:nth-of-type(4){
+    background: url('../images/44740a01-ff0f-467a-86a0-861687ca726f.png@!1920w_126h_jpg_web')no-repeat center center;
+}
+.car-arrow{
+    max-width: 100%;
+    width: 100%;
+    height: 40px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.prev{
+    position: absolute;
+    left: 50px;
+}
+.next{
+    position: absolute;
+    right: 50px;
+}
+.prev,.next{
+    font-size: 40px;
+    line-height: 40px;
+    cursor: pointer;
+}
+.prev:hover,.next:hover{
+    color: #FF3366;
+}
+.prev,.next,.img-dot{
+    color: #FFFFFF;
+}
+.img-dot{
+    position: absolute;
+    left: 50%;
+    bottom: 10px;
+}
+.img-dot li{
+    cursor: pointer;
+    float: left;
+}
+.img-dot li:hover{
+    color: #FF3366;
+}
+.active-dot{
+    color: #FF3366;
+}
 /* search */
 
 .search {
