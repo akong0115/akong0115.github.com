@@ -100,7 +100,35 @@ document.getElementById('qr-code').onmouseover=function (e) {
   document.getElementById('up-to-head').onmouseout=function(e){
     document.getElementById('up-top-show').className='sidebar-show hide';
   }
+
   document.getElementById('up-to-head').onclick=function(e){
-    document.documentElement.scrollTop=0;
+    // document.documentElement.scrollTop=0;
+    let timer=null;
+    cancelAnimationFrame(timer);
+    timer=requestAnimationFrame(function fn(){
+      let top=document.documentElement.scrollTop|| document.documentElement.scrollTop;
+      if(top > 0){
+        document.body.scrollTop = document.documentElement.scrollTop = top - 50;
+        timer = requestAnimationFrame(fn);
+        }else{
+        cancelAnimationFrame(timer);
+        } 
+    });
     document.getElementById('up-top-show').className='sidebar-show hide';
   }
+  console.log(document.getElementById('band-house-btns').children);
+  // 品牌按钮
+ for(let i=1;i<4;i++){
+  document.getElementById('band-house-btns').children[i].onclick=function (e) {
+      e.stopPropagation();
+      console.log(this.parentElement);
+      for(let j=1;j<4;j++){
+        this.parentElement.children[j].className='';
+      }
+      this.className='active-btn';
+      for(let j=1;j<4;j++){
+        this.parentElement.parentElement.children[j].className='band-house-show show-list display-none';
+      }
+      this.parentElement.parentElement.children[i].className='band-house-show show-list display-show';
+    }
+ }

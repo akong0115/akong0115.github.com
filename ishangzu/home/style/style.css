@@ -1019,3 +1019,9 @@ aside .icon-phone:hover ,
 .slow-show{
     opacity: 1;
 }
+.display-none{
+    display: none;
+}
+.display-show{
+    display: block;
+}
