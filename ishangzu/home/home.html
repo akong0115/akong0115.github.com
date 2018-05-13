@@ -45,17 +45,17 @@
             <form>
                 <input type="text" placeholder="输入区域、小区名" id="area-input">
                 <ul class="drop-select" id="area-select">
-                        <li class="active-selected">热门搜索</li>
-                        <li>萧山北干</li>
-                        <li>下沙</li>
-                        <li>滨江</li>
-                        <li>西溪北苑</li>
-                        <li>寰宇天下</li>
-                        <li>朝晖</li>
-                    </ul>
+                    <li class="active-selected">热门搜索</li>
+                    <li>萧山北干</li>
+                    <li>下沙</li>
+                    <li>滨江</li>
+                    <li>西溪北苑</li>
+                    <li>寰宇天下</li>
+                    <li>朝晖</li>
+                </ul>
             </form>
             <button class="red-btn">马上找房</button>
-            
+
             <ul>
                 <li>
                     <a href="#">萧山北干</a>
@@ -146,7 +146,7 @@
             <div>
                 <div class="band-house-title">
                     <h2>品牌公寓</h2>
-                    <button class="active-btn red-btn">偶寓</button>
+                    <button class="active-btn">偶寓</button>
                     <button>随寓</button>
                     <button>集寓</button>
                     <span>查看更多</span>
@@ -280,20 +280,28 @@
             <div class="ques-btn red-btn">
                 <div class="iconfont icon-message"></div>立即咨询</div>
             <div class="quick-btn">
-                <a class="iconfont icon-user">
-                    <div class="sidebar-show">
+                <div>
+                <a class="iconfont icon-user" id="entrust">
+                    <div class="sidebar-show hide">
                         <p>业主委托</p>
                         <i class="triangle"></i>
                     </div>
                 </a>
-                <a class="iconfont icon-phone">
-                    <div class="sidebar-show">
-                            <img src="./images/wecat.svg">
-                            <p>爱上租APP</p>
+                <a class="iconfont icon-phone" id="qr-code">
+                    <div class="sidebar-show hide">
+                        <img src="./images/wecat.svg">
+                        <p>爱上租APP</p>
                         <i class="triangle"></i>
                     </div>
                 </a>
-                <a class="iconfont icon-arrow-up"></a>
+            </div>
+                <div class="up-btn">
+                    <a class="iconfont icon-arrow-up trans-hide" id="up-to-head"></a>
+                    <div class="sidebar-show hide" id="up-top-show">
+                        <p>返回顶部</p>
+                        <i class="triangle"></i>
+                    </div>
+                </div>
             </div>
         </aside>
     </main>
