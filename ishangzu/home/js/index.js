@@ -85,9 +85,16 @@ document.getElementById('qr-code').onmouseout = function (e) {
 window.onscroll = function (e) {
   // this.console.log(document.documentElement.scrollTop);
   let t = document.documentElement.scrollTop || document.body.scrollTop;
+  if(t>668){
+    document.getElementById('search').className='search search-fixed';
+  }else{
+    document.getElementById('search').className='search';
+
+  }
   if (t > 150) {
     // console.log(`66`);
     document.getElementById('up-to-head').className = 'trans-hide slow-show iconfont icon-arrow-up';
+
   } else {
     document.getElementById('up-to-head').className = 'iconfont icon-arrow-up trans-hide';
   }
@@ -116,11 +123,19 @@ document.getElementById('up-to-head').onclick = function (e) {
   });
   document.getElementById('up-top-show').className = 'sidebar-show hide';
 }
-console.log(document.getElementById('band-house-btns').children);
+// console.log(document.getElementById('band-house-btns').children);
 // 品牌按钮
+let slideShowInterval ;
+function slide(className, num) {
+  slideShowInterval= setInterval(function () {
+    nextImg(className, num);
+  }, 5000);
+};
+slide('slideshow',0);
 for (let i = 1; i < 4; i++) {
   document.getElementById('band-house-btns').children[i].onclick = function (e) {
     e.stopPropagation();
+    slide('slideshow', i-1);
     console.log(this.parentElement);
     for (let j = 1; j < 4; j++) {
       this.parentElement.children[j].className = '';
@@ -194,6 +209,7 @@ let carouselTimer = setInterval(function () {
     }
   }
 }, 5000);
+// 头部轮播点
 for (let i = 0; i < dots.length; i++) {
   dots[i].onclick = function (e) {
     for (let j = 0; j < 4; j++) {
@@ -203,5 +219,101 @@ for (let i = 0; i < dots.length; i++) {
     e.stopPropagation();
     imgs[i].className = 'display-show';
     dots[i].className = 'iconfont active-dot';
+  }
+}
+//页面轮播图
+let dotNum = 0;
+
+function nextImg(className, i) {
+  let slideShow = document.getElementsByClassName(className)[i];
+  // console.log(slideShow);
+  let left = parseInt(slideShow.children[0].style.left);
+  let timer = null;
+  let flag = 0;
+  let slideDots = document.getElementsByClassName('img-dot');
+  // console.log(slideDots[1].childElementCount);
+  for (let j = 0; j < slideDots[i + 1].childElementCount; j++) {
+    slideDots[i + 1].children[j].className = 'iconfont';
+  }
+  console.log(dotNum);
+  if (dotNum < 2) {
+    dotNum++;
+  } else {
+    dotNum = 0;
+  }
+  timer = setInterval(function () {
+    if (left > -2280) {
+      if (flag < 570) {
+        left -= 10;
+        flag += 10
+        slideShow.children[0].style.left = `${left}px`;
+      }
+      else {
+        flag = 0;
+        slideDots[i + 1].children[dotNum].className = 'iconfont active-dot';
+        clearInterval(timer);
+
+      }
+    } else {
+      left = -570;
+      slideShow.children[0].style.left = `${left}px`;
+      flag = 0;
+      slideDots[i + 1].children[0].className = 'iconfont active-dot';
+      clearInterval(timer);
+
+    }
+  }, 10);
+}
+function prevImg(className, i) {
+  let slideShow = document.getElementsByClassName(className)[i];
+  // console.log(slideShow);
+  let left = parseInt(slideShow.children[0].style.left);
+  let timer = null;
+  let flag = 0;
+  let slideDots = document.getElementsByClassName('img-dot');
+  for (let j = 0; j < slideDots[i + 1].childElementCount; j++) {
+    slideDots[i + 1].children[j].className = 'iconfont';
+  }
+  if (dotNum >0) {
+    dotNum--;
+  } else {
+    dotNum = 2;
+  }
+  timer = setInterval(function () {
+    if (left < 0) {
+      if (flag < 570) {
+        left += 10;
+        flag += 10
+        slideShow.children[0].style.left = `${left}px`;
+      }
+      else {
+        flag=0;
+        slideDots[i + 1].children[dotNum].className = 'iconfont active-dot';
+        clearInterval(timer);
+      }
+    } else {
+      left = -1710;
+      slideShow.children[0].style.left = `${left}px`;
+      slideDots[i + 1].children[2].className = 'iconfont active-dot';
+      flag = 0;
+      clearInterval(timer);
+    }
+  }, 10);
+}
+
+
+
+let slidePrevs = document.getElementsByClassName('slide-prev');
+for (let i = 0; i < slidePrevs.length; i++) {
+  slidePrevs[i].onclick = function (e) {
+    e.stopPropagation();
+    prevImg(`slideshow`, i);
+  }
+}
+let slideNexts = document.getElementsByClassName('slide-next');
+for (let i = 0; i < slideNexts.length; i++) {
+  slideNexts[i].onclick = function (e) {
+    e.stopPropagation();
+    nextImg(`slideshow`, i);
   }
 }
