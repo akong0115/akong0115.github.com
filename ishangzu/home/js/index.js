@@ -132,6 +132,7 @@ function slide(className, num) {
   }, 5000);
 };
 slide('slideshow',0);
+slide('slideshow',3);
 for (let i = 1; i < 4; i++) {
   document.getElementById('band-house-btns').children[i].onclick = function (e) {
     e.stopPropagation();
@@ -266,7 +267,6 @@ function nextImg(className, i) {
 }
 function prevImg(className, i) {
   let slideShow = document.getElementsByClassName(className)[i];
-  // console.log(slideShow);
   let left = parseInt(slideShow.children[0].style.left);
   let timer = null;
   let flag = 0;

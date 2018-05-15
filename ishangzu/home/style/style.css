@@ -571,7 +571,7 @@ header nav a:focus {
 
 .process {
     font-family: PingFang-SC-Medium;
-    margin-right: 198px;
+    margin-right: 148px;
 }
 
 .process>span {
@@ -1163,4 +1163,10 @@ aside .icon-phone:hover,
     font-size: 8px;
     justify-content: flex-end;
     right: 16px;
+}
+.slide-prev{
+    content: '\e69d';
+}
+.slide-next{
+    content: '\e64a';
 }
