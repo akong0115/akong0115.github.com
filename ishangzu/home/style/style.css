@@ -1146,16 +1146,17 @@ aside .icon-phone:hover,
     float: left;
     margin-right: 0;
 }
-.slideshow .car-arrow{
-    position: relative;
-}
 .slideshow .car-arrow span{
     height: 40px;
     width: 40px;
     font-size: 24px;
     text-align: center;
+    /* visibility: hidden; */
 }
-.slideshow .car-arrow span:hover{
+.slideshow .car-arrow span:hover {
+    background: #FF3366;
+    border-radius: 2px;
+    box-sizing: border-box;
     color: #FFFFFF;
 }
 .slideshow .img-dot{
@@ -1163,37 +1164,9 @@ aside .icon-phone:hover,
     justify-content: flex-end;
     right: 16px;
 }
-.slide-prev ,.slide-next{
-    font-size: 40px;
-    line-height: 40px;
-    cursor: pointer;
-}
 .slide-prev{
     content: '\e69d';
-    height: 40px;
-    width: 40px;
-    font-size: 24px;
-    text-align: center;
-    background: #FF3366;
-    border-radius: 2px;
-    box-sizing: border-box;
-    color: #FFFFFF;
-    left: 50px;
-    position: absolute;
 }
 .slide-next{
     content: '\e64a';
-    height: 40px;
-    width: 40px;
-    font-size: 24px;
-    text-align: center;
-    background: #FF3366;
-    border-radius: 2px;
-    box-sizing: border-box;
-    color: #FFFFFF;
-    position: absolute;
-    right: 50px;
 }
-.all ol li.current{
-    content: '\e608'
-  }
