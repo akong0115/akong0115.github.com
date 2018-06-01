@@ -1,0 +1,21 @@
+body {
+    overflow: hidden;
+}
+
+header {
+    float: left;
+    height: 100%;
+    width: 200px;
+    margin-bottom: -3000px;
+    padding-bottom: 3000px;
+    background: #399;
+    margin-right: 20px;
+    color: #fff;
+    text-align: center;
+    padding-top: 50px;
+}
+
+main {
+    overflow: hidden;
+    height: 100%;
+}

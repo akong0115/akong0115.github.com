@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+header,
+article,
+footer,
+h2 {
+    margin-bottom: 20px;
+}
+
+a {
+    color: blue;
+}
+
+h3,
+span,
+a {
+    font-size: 18px;
+}
+
+li,
+h3 {
+    margin-right: 20px;
+    margin-bottom: 4px;
+}
+
+span {
+    vertical-align: top;
+}
+
+.float {
+    float: left;
+}
+
+article {
+    overflow: hidden;
+}
