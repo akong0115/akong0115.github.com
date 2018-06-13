@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue</title>
+    <style>
+        p {
+            color: mediumspringgreen;
+        }
+
+        .active {
+            height: 200px;
+            width: 200px;
+            background-color: aqua;
+            border: 1px solid firebrick;
+        }
+
+        .text-danger {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        {{message}}
+        <ol>
+            <todo-item v-for="item in groceryList" v-bind:todo="item" v-bind:key="item.id"></todo-item>
+        </ol>
+        <p>当一个 Vue 实例被创建时，它向 Vue 的响应式系统中加入了其 data 对象中能找到的所有的属性。当这些属性的值发生改变时，视图将会产生“响应”，即匹配更新为新的值。</p>
+        <p>当这些数据改变时，视图会进行重渲染。值得注意的是只有当实例被创建时 data 中存在的属性才是响应式的。</p>
+        <p>每个 Vue 实例在被创建时都要经过一系列的初始化过程,生命周期钩子的函数,这给了用户在不同阶段添加自己的代码的机会。</p>
+        {{reserveMessage}}
+        <div :class="classObject">123</div>
+        <div :class="[activeClass,errorClass]"></div>
+        <div :class="[{active:isActive},errorClass]"></div>
+        <div v-if="ok">v-if</div>
+        <div v-else>v-else</div>
+        <template v-if="ok">
+            <label>Username</label>
+            <input placeholder="Enter your username">
+            <p>cnm</p>
+        </template>
+        <template v-else>
+            <label>Email</label>
+            <input placeholder="Enter your email address">
+        </template>
+        <button @click="changeOk">change ok</button>
+        <ul>
+            <li v-for="item in groceryList">{{item.text}}</li>
+        </ul>
+        <ul>
+            <li v-for="(item,index) in groceryList">{{item.text}}-{{index}}</li>
+        </ul>
+        <ul>
+            <li v-for="(value,key,index) in object">{{value}}-{{key}}-{{index}}</li>
+        </ul>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        Vue.component('todo-item', {
+            props: ['todo'],
+            template: '<li>{{ todo.text }}</li>'
+        });
+        var app = new Vue({
+            el: '#app',
+            data() {
+                return {
+                    message: 'hello',
+                    groceryList: [
+                        { id: 0, text: '蔬菜' },
+                        { id: 1, text: '奶酪' },
+                        { id: 2, text: '随便其它什么人吃的东西' }
+                    ],
+                    object: {
+                        firstName: 'John',
+                        lastName: 'Doe',
+                        age: 30
+                    },
+                    isActive: true,
+                    error: null,
+                    activeClass: 'active',
+                    errorClass: 'text-danger',
+                    ok: true
+                }
+            },
+            created: function () {
+                console.log(`created   ${this.groceryList[0].text}`);
+            },
+            computed: {
+                reserveMessage: function () {
+                    return this.message.split('').reverse().join('');
+                },
+                classObject: function () {
+                    return {
+                        active: this.isActive && !this.error,
+                        'text-danger': !this.error
+                    }
+                }
+            },
+            methods: {
+                changeOk: function () {
+                    if (this.ok) {
+                        this.ok = false;
+                    } else {
+                        this.ok = true;
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

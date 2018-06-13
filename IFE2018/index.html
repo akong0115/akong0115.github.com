@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function fn(l, r) {
+            let count = 0;
+            let num = 0;
+            for (let i = l; i <= r; i++) {
+                for (let j = i, k = 0; j > 0; j--, k++) {
+                    if (j > 9) {
+                        let length = parseInt(j / 10);
+                        let temp = j;
+                        while (length >= 0) {
+
+                            num += parseInt(j / Math.pow(10, length)) * Math.pow(10, k);
+                            j %= 10;
+                            length--;
+                            if (j === 0) {
+                                num *= 10;
+                                length--;
+                            }
+                        }
+                        k++;
+                        j = temp;
+                    } else {
+                        num += j * Math.pow(10, k);
+                    }
+                }
+                if (num % 3 == 0) {
+                    count++;
+                }
+                num = 0;
+            }
+            return count;
+        }
+        console.log(fn(10, 110));
+    </script>
+</body>
+
+</html>
