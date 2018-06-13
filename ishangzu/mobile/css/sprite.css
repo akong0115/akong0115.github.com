@@ -1,0 +1,53 @@
+#gopng_house_outer {
+    height: 4.2rem;
+    width: 4.2rem;
+    overflow: hidden;
+}
+
+#gopng_house {
+    background: url(../images/sprite.png) -0px -0px no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    _background: none;
+    _padding-left: 0px;
+    _margin-left: -0px;
+    _padding-top: 0px;
+    _margin-top: -0px;
+}
+
+#gopng_location_outer {
+    height: 4.2rem;
+    width: 4.2rem;
+    overflow: hidden;
+}
+
+#gopng_location {
+    background: url(../images/sprite.png) -4.25rem -0px no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    _background: none;
+    _padding-left: 4.2rem;
+    _margin-left: -4.2rem;
+    _padding-top: 0px;
+    _margin-top: -0px;
+}
+
+#gopng_APP_outer {
+    height: 4.2rem;
+    width: 4.2rem;
+    overflow: hidden;
+}
+
+#gopng_APP {
+    background: url(../images/sprite.png) -8.39rem -0px no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    _background: none;
+    _padding-left: 8.4rem;
+    _margin-left: -8.4rem;
+    _padding-top: 0px;
+    _margin-top: -0px;
+}
